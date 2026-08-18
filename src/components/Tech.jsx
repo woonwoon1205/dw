@@ -14,8 +14,11 @@ const Tech = () => {
       </motion.div>
 
       <div className="flex flex-wrap justify-center gap-10 mt-14">
-        {technologies.map((technology) => (
-          <div className="w-28 h-28" key={technology.name}>
+                {technologies.map((technology, index) => (
+          <div
+            className={`w-28 h-28 ${index >= 8 ? 'max-md:hidden' : ''}`}
+            key={technology.name}
+          >
             <BallCanvas icon={technology.icon} />
           </div>
         ))}
